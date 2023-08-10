@@ -1,0 +1,241 @@
+@import "_fonts.scss";
+@import "_var.scss";
+@import "_mixin.scss";
+@import "_templates.scss";
+
+.container {
+   max-width: calc($containerWidth + 30px);
+   padding: 0px 15px 0px 15px;
+   margin: 0 auto;
+}
+
+.button {
+   @extend %StyleTextButtonWhite;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 12px 24px;
+   background: $ColorGrayBlack;
+   color: $ColorLightWhite;
+   border-radius: 4px;
+   transition: all .5s;
+   border: 1px solid transparent;
+}
+
+.button--white {
+   background: $ColorLightWhite;
+   color: $ColorGrayBlack;
+}
+
+.button--hover {
+   @media (min-width: 769px) {
+
+      &:hover {
+         color: $ColorGrayBlack;
+         border: 1px solid $ColorGrayBlack;
+         background: $ColorLightWhite;
+      }
+
+   }
+}
+
+.burger-open {
+   width: 34px;
+   height: 18px;
+   display: none;
+   flex-direction: column;
+   justify-content: space-between;
+
+   @media (max-width: 1024px) {
+
+      & {
+         display: flex;
+      }
+
+   }
+
+   span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: $ColorWhite;
+      border-radius: 50px;
+
+      &:last-child {
+         width: 50%;
+         margin: 0px 0px 0px auto;
+      }
+   }
+}
+
+.title {
+   @extend %StyleTextH2;
+
+   span {
+      display: block;
+      @extend %StyleTextSubTitle;
+      margin: 0px 0px 8px 0px;
+   }
+}
+
+.program-form {
+   border-radius: 10px;
+   backdrop-filter: blur(3px);
+   background: rgba($ColorWhite, $alpha: .2);
+   padding: 40px 42px 40px 43px;
+
+   @media (max-width: 864px) {
+
+      & {
+         backdrop-filter: none;
+         background: none;
+         padding: 0px 0px 0px 0px;
+      }
+
+   }
+
+   &__list-inputs {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+   }
+
+   &__input-box {
+      display: flex;
+      flex-direction: column;
+
+      &:last-child {
+         flex-shrink: 0;
+      }
+
+      &:not(:last-child) {
+         flex-basis: 270px;
+
+         @media (max-width: 864px) {
+
+            & {
+               display: none;
+            }
+
+         }
+      }
+   }
+
+   &__select,
+   &__input {
+      border-radius: 8px;
+      border: 1px solid #E1E3E4;
+      padding: 15px 16px;
+      @extend %StyleTextButtonWhite;
+      line-height: 150%;
+      background: transparent;
+      position: relative;
+   }
+
+   &__select-wrapper {
+      position: relative;
+      margin: 0px 0px 8px 0px;
+
+      &::after {
+         @include pseudo();
+         width: 40px;
+         height: 40px;
+         right: 0;
+         top: 50%;
+         transform: translate(0px, -50%);
+         background: url(../images/arrow-down-select.svg) no-repeat center/center;
+         z-index: -1;
+      }
+   }
+
+   &__select {
+      cursor: pointer;
+      width: 100%;
+      appearance: none;
+   }
+
+   &__input {
+      margin: 0px 0px 8px 0px;
+
+      &::placeholder {
+         color: $ColorLightWhite;
+      }
+
+      &::-webkit-calendar-picker-indicator {
+         color: transparent;
+         opacity: 1;
+         background: url(../images/date-icon.svg) no-repeat center;
+         background-size: contain;
+      }
+   }
+
+   &__label {
+      @extend %StyleTextLabelSmall;
+   }
+
+   &__button {
+      min-height: 52px;
+   }
+}
+
+.burger {
+   width: 100vw;
+   height: 100dvh;
+   position: fixed;
+   top: -100%;
+   overflow: auto;
+   background: $ColorGrayBlack;
+   transition: top .7s, height .2s;
+   z-index: 5000;
+   
+   &--active {
+      top: 0px;
+   }
+
+   &__top {
+      padding: 16px 0px 15px 0px;
+      display: flex;
+      justify-content: end;
+   }
+
+   &__body {
+      padding: 0px 0px 0px 16px;
+   }
+
+   &__buttons-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+   }
+
+   &__button-nav {
+      @extend %StyleTextLabelSmall;
+      line-height: 128%;
+      padding: 0px 0px 0px 16px;
+      position: relative;
+
+      &::before {
+         @include pseudo();
+         width: 6px;
+         height: 10px;
+         top: 0px;
+         left: -8px;
+         background: url(../images/arrow-burger-button.svg) no-repeat 100%/100%;
+      }
+   }
+}
+
+.close-button {
+   width: 14px;
+   height: 14px;
+}
+
+.body-lock {
+   overflow: hidden;
+}
+
+
+
+@import "blocks/header";
+@import "blocks/main-page";
+@import "blocks/about";

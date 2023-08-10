@@ -1,0 +1,66 @@
+.main-page {
+   width: 100vw;
+   height: 100dvh;
+   min-height: 500px;
+   transition: height .2s;
+   position: relative;
+
+   &__container {
+      position: relative;
+      height: 100%;
+   }
+
+   &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+   }
+
+   &__inner {
+      width: calc(100% - 30px);
+      position: absolute;
+      bottom: 8.62944162%;
+      left: 15px;
+   }
+
+   &__title {
+      @extend %StyleTextH1;
+      margin: 0px 0px 41px 0px;
+
+      @media (max-width: 928px) {
+
+         & {
+            font-size: rem(45);
+         }
+
+      }
+
+      @media (max-width: 864px) {
+      
+         & {
+            margin: 0px 0px 31px 0px;
+         }
+      
+      }
+
+      @media (max-width: 776px) {
+
+         & {
+            font-size: rem(40);
+         }
+
+      }
+
+      @media (max-width: 521px) {
+      
+         & {
+            font-size: rem(26);
+         }
+      
+      }
+   }
+}

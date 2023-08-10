@@ -1,0 +1,53 @@
+%StyleTextMain {
+   color: $ColorBlack;
+   font-family: $mainFont;
+   font-size: rem(18);
+   font-weight: 400;
+   line-height: 150%;
+}
+
+%StyleTextH2 {
+   color: $ColorBlack;
+   font-family: $mainFont;
+   font-size: rem(32);
+   font-style: normal;
+   font-weight: 800;
+   line-height: 120%;
+}
+
+%StyleTextSubTitle {
+   color: $ColorYellow;
+   font-family: $mainFont;
+   font-size: rem(24);
+   font-style: normal;
+   font-weight: 400;
+   line-height: 83.333%;
+}
+
+%StyleTextH1 {
+   color: $ColorLightWhite;
+   font-family: $SecondFontNextArt;
+   font-size: rem(50);
+   font-style: normal;
+   font-weight: 700;
+   line-height: 150%;
+   letter-spacing: 1px;
+}
+
+%StyleTextButtonWhite {
+   color: $ColorLightWhite;
+   font-family: $mainFont;
+   font-size: rem(16);
+   font-weight: 600;
+   line-height: 125%;
+   letter-spacing: rem(0.192);
+}
+
+%StyleTextLabelSmall {
+   color: $ColorLightWhite;
+   font-family: $mainFont;
+   font-size: rem(14);
+   font-style: normal;
+   font-weight: 400;
+   line-height: 150%;
+}
