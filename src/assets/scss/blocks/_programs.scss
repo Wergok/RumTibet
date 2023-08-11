@@ -1,0 +1,131 @@
+.programs {
+   padding: $paddingPc 0px $paddingPc 0px;
+   background: $ColorGrayWhite;
+
+   @media (max-width: 768px) {
+
+      & {
+         padding: $paddingTablet 0px $paddingTablet 0px;
+      }
+
+   }
+
+   @media (max-width: 425px) {
+
+      & {
+         padding: $paddingPhone 0px $paddingPhone 0px;
+      }
+
+   }
+
+   &__inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+   }
+
+   &__information {
+      flex: 1 2;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      @media (max-width: 1059px) {
+      
+         & {
+            gap: 32px;
+         }
+      
+      }
+   }
+
+   &__text {
+      @extend %StyleTextMain;
+   }
+
+   &__benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      
+      @media (max-width: 1059px) {
+      
+         & {
+            gap: 32px;
+         }
+      
+      }
+   }
+
+   &__benefits-box {
+      padding: 0px 0px 0px 66px;
+      position: relative;
+
+      &:nth-child(1)::before {
+         background: url(../images/programs-icon1.svg) 75%/75% no-repeat #E5EEEB;
+      }
+
+      &:nth-child(2)::before {
+         background: url(../images/programs-icon2.svg) 75%/75% no-repeat #E3E6EE;
+      }
+
+      &:nth-child(3)::before {
+         background: url(../images/programs-icon3.svg) 75%/75% no-repeat #F3F1E1;
+      }
+
+      &::before {
+         @include pseudo();
+         width: 50px;
+         height: 50px;
+         border-radius: 4px;
+         top: 50%;
+         left: 0px;
+         transform: translate(0px, -50%);
+      }
+   }
+
+   &__benefits-title {
+      @extend %StyleTextH1;
+      font-size: rem(18);
+      font-family: $mainFont;
+      color: $ColorBlack;
+      line-height: 111.111%;
+      letter-spacing: 0.216px;
+   }
+
+   &__benefits-text {
+      @extend %StyleTextMain;
+   }
+
+   &__button {
+      align-self: flex-start;
+   }
+
+   &__images-box {
+      flex: 0 0 510px;
+      display: flex;
+      flex-wrap: wrap;
+      max-height: 510px;
+      margin: auto 0;
+      gap: 10px;
+
+      @media (max-width: 1000px) {
+      
+         & {
+            display: none;
+         }
+      
+      }
+   }
+
+   &__image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50px 0px;
+      object-fit: cover;
+
+      &:nth-child(3n+1) {
+         border-radius: 0px 50px;
+      }
+   }
+}

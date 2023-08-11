@@ -11,9 +11,7 @@
 
 .button {
    @extend %StyleTextButtonWhite;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+   cursor: pointer;
    padding: 12px 24px;
    background: $ColorGrayBlack;
    color: $ColorLightWhite;
@@ -239,3 +237,5 @@
 @import "blocks/header";
 @import "blocks/main-page";
 @import "blocks/about";
+@import "blocks/programs";
+@import "blocks/price";

@@ -23,12 +23,12 @@
       gap: 30px;
 
       @media (max-width: 852px) {
-   
+
          & {
             flex-direction: column-reverse;
             gap: 40px;
          }
-      
+
       }
    }
 
@@ -37,11 +37,11 @@
       position: relative;
 
       @media (max-width: 852px) {
-      
+
          & {
             flex: 0 0 400px;
          }
-      
+
       }
    }
 
@@ -57,11 +57,11 @@
          left: 0;
 
          @media (max-width: 852px) {
-         
+
             & {
                display: none;
             }
-         
+
          }
       }
    }
@@ -86,14 +86,14 @@
       }
 
       @media (max-width: 852px) {
-         
+
          & {
             display: block;
             margin: 0 auto;
             width: 100%;
             position: static;
          }
-      
+
       }
 
       & img {
@@ -101,13 +101,13 @@
          position: static;
 
          @media (max-width: 852px) {
-         
+
             & {
                display: block;
                width: 100%;
                position: static;
             }
-         
+
          }
       }
    }
@@ -117,12 +117,12 @@
       flex: 0 7 580px;
 
       @media (max-width: 852px) {
-      
+
          & {
             flex: 0 0 auto;
             padding: 0px 0px 0px 0px;
          }
-      
+
       }
    }
 
@@ -130,11 +130,11 @@
       margin: 0px 0px 40px 0px;
 
       @media (max-width: 938px) {
-      
+
          & {
             margin: 0px 0px 20px 0px;
          }
-      
+
       }
    }
 
@@ -143,15 +143,23 @@
       margin: 0px 0px 40px 0px;
 
       @media (max-width: 938px) {
-      
+
          & {
             margin: 0px 0px 20px 0px;
          }
-      
+
       }
    }
 
    &__button {
-      margin: 0px auto;
+
+      @media (max-width: 852px) {
+
+         & {
+            margin: 0px auto;
+
+         }
+
+      }
    }
 }
