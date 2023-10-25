@@ -3,6 +3,10 @@
 @import "_mixin.scss";
 @import "_templates.scss";
 
+*, *::after, *::before {
+   box-sizing: border-box;
+}
+
 .container {
    max-width: calc($containerWidth + 30px);
    padding: 0px 15px 0px 15px;
@@ -185,7 +189,7 @@
    background: $ColorGrayBlack;
    transition: top .7s, height .2s;
    z-index: 5000;
-   
+
    &--active {
       top: 0px;
    }
@@ -232,10 +236,252 @@
    overflow: hidden;
 }
 
+.slider {
+   width: 100%;
 
+   &__line {
+      display: flex;
+   }
+
+   img {
+      pointer-events: none
+   }
+}
+
+.card-price {
+   flex: 1 1;
+   min-height: 500px;
+   position: relative;
+   border-radius: 32px;
+   overflow: hidden;
+
+   @media (max-width: 1088px) {
+
+      & {
+         min-height: 400px;
+      }
+
+   }
+
+   @media (max-width: 1000px) {
+
+      & {
+         flex: 0 1 400px;
+      }
+
+   }
+
+   &__background {
+      top: 0px;
+      left: 0px;
+      z-index: -1;
+      border-radius: 32px;
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__rating {
+      @extend %StyleTextLabelSmall;
+      position: absolute;
+      top: 57px;
+      right: 0;
+      line-height: 128%;
+      color: $ColorBlack;
+      padding: 4px 8px 4px 36px;
+      border-radius: 4px 0px 0px 4px;
+      background: rgba(253, 253, 253, 0.40);
+      backdrop-filter: blur(2px);
+
+      &::before {
+         @include pseudo();
+         top: 50%;
+         left: 8px;
+         transform: translate(0px, -50%);
+         width: 24px;
+         height: 24px;
+         background: url(../images/price-card-star.svg);
+      }
+   }
+
+   &__bottom {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      backdrop-filter: blur(3px);
+      width: 100%;
+      height: 100%;
+      transition: all .5s;
+   }
+
+   &__bottom-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 20px 32px 38px 32px;
+
+      @media (max-width: 425px) {
+
+         & {
+            padding: 23px 24px 24px 24px;
+            align-items: center;
+         }
+
+      }
+   }
+
+   &__title {
+      @extend %StyleTextSubTitle;
+      color: $ColorLightWhite;
+      line-height: 120%;
+
+      @media (max-width: 1088px) {
+
+         & {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: rem(18);
+         }
+
+      }
+
+      span {
+         display: block;
+         @extend %StyleTextLabelSmall;
+         line-height: 128%;
+
+         @media (max-width: 1169px) {
+
+            & {
+               display: none;
+            }
+
+         }
+      }
+   }
+
+   &__cost {
+      color: $ColorLightWhite;
+      font-family: $mainFont;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 54px;
+      padding: 8px 16px 8px 16px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.30);
+
+      @media (max-width: 1088px) {
+
+         & {
+            font-size: rem(16);
+            padding: 6px 12px 6px 12px;
+         }
+
+      }
+   }
+
+   &__description {
+      @extend %StyleTextButtonWhite;
+      margin: 0px 32px 0px 32px;
+   }
+
+   &__button {
+      display: block;
+      margin: auto 0px 32px 32px;
+      align-self: flex-start;
+   }
+}
+
+.new {
+   display: flex;
+   gap: 24px;
+   background: $ColorLightWhite;
+   border-radius: 10px;
+   padding: 16px;
+   height: 296px;
+   justify-content: space-between;
+
+   &__image-wrapper {
+      flex: 0.8 1;
+      border-radius: 6px;
+   }
+
+   &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+   }
+
+   &__inner {
+      flex: 1 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 16px 0px 16px 0px;
+   }
+
+   &__title {
+      flex: 0 0;
+      color: $ColorBlack;
+      font-family: $mainFont;
+      font-size: rem(24);
+      font-weight: 700;
+      line-height: 133.333%;
+      cursor: pointer;
+
+      @media (min-width: 769px) {
+
+         &:hover {
+            text-decoration-line: underline
+         }
+
+      }
+   }
+
+   &__text {
+      flex: 1 1;
+      color: $ColorBlack;
+      @extend %StyleTextLabelSmall;
+   }
+
+   &__bottom {
+      flex: 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: auto 0px 0px 0px;
+   }
+
+   &__time {
+      @extend %StyleTextSubTitle;
+      font-size: rem(14);
+   }
+
+   &__link {
+      font-family: $mainFont;
+      font-size: rem(14);
+      font-weight: 700;
+      line-height: 142.857%;
+      text-decoration: none;
+      color: $ColorBlack;
+   }
+
+
+   &__button {}
+}
 
 @import "blocks/header";
 @import "blocks/main-page";
 @import "blocks/about";
 @import "blocks/programs";
 @import "blocks/price";
+@import "blocks/blog";

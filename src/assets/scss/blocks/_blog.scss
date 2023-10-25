@@ -1,0 +1,42 @@
+.blog {
+   padding: $paddingPc 0px $paddingPc 0px;
+   background: $ColorGrayWhite;
+
+   @media (max-width: 768px) {
+
+      & {
+         padding: $paddingTablet 0px $paddingTablet 0px;
+      }
+
+   }
+
+   @media (max-width: 425px) {
+
+      & {
+         padding: $paddingPhone 0px $paddingPhone 0px;
+      }
+
+   }
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__title {
+      text-align: center;
+      margin: 0px 0px 40px 0px;
+   }
+
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 0px 0px 50px 0px;
+   }
+
+   &__list-item {
+      flex: 0 1 48%;
+   }
+}
